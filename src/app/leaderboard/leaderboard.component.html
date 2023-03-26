@@ -3,15 +3,12 @@
   <table>
     <thead>
       <tr>
-        <th>Rank</th>
         <th>Name</th>
-        <th>Score</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let player of competitors">
-        <td>{{player.displayName}}</td>
-        <td>{{player.place}}</td>
+        <td>{{player.athlete.displayName}}</td>
       </tr>
     </tbody>
   </table>

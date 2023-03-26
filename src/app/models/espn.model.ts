@@ -54,7 +54,12 @@ interface CompetitorStatus {
   detail: string;
 }
 
+interface Athlete {
+  displayName: string;
+}
+
 interface Competitor {
+  athlete: Athlete;
   id: string;
   uid: string;
   type: string;
@@ -78,6 +83,10 @@ interface Competitor {
   headshort: string;
 }
 
+interface Competition {
+  competitors: Competitor[];
+}
+
 interface Event {
   gamecastAvailable: boolean;
   playByPlayAvailable: boolean;
@@ -85,6 +94,7 @@ interface Event {
   recent: boolean;
   id: string;
   competitionId: string;
+  competitions: Competition[];
   uid: string;
   date: string;
   endDate: string;
@@ -131,6 +141,7 @@ interface Sport {
   name: string;
   slug: string;
   leagues: League[];
+  events: Event[];
 
 }
 
