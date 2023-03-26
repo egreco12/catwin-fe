@@ -21,8 +21,18 @@ export class LeaderboardComponent {
     this.leaderboardService.getEvent()
     .subscribe((data: Event) => {
         this.event = data;
-        this.competitors = this.event.competitions[0].competitors;
-        console.log("competitors: ", this.competitors);
+        this.competitors = this.event.competitions[0].competitors.sort((a, b) => {
+          if (a.statistics[0].value < b.statistics[0].value) {
+            return -1;
+          }
+
+          if (a.statistics[0].value > b.statistics[0].value) {
+            return 1;
+          }
+
+          return 0;
+        });
+        console.log(this.competitors);
     });
   }
 }

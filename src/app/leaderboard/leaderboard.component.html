@@ -9,10 +9,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let player of competitors">
-        <td>1</td>
+      <tr *ngFor="let player of competitors; index as i">
+        <td>{{i+1}}</td>
         <td>{{player.athlete.displayName}}</td>
-        <td>-14</td>
+        <td>{{player.score.displayValue}}</td>
       </tr>
     </tbody>
   </table>

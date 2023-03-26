@@ -54,8 +54,17 @@ interface CompetitorStatus {
   detail: string;
 }
 
+interface Score {
+  displayValue: string;
+  value: number;
+}
+
 interface Athlete {
   displayName: string;
+}
+
+interface Statistics {
+  value: number;
 }
 
 interface Competitor {
@@ -64,7 +73,7 @@ interface Competitor {
   uid: string;
   type: string;
   status: CompetitorStatus;
-  score: string;
+  score: Score;
   movement: number;
   earnings: number;
   amateur: boolean;
@@ -81,6 +90,7 @@ interface Competitor {
   name: string;
   abbreviation: string;
   headshort: string;
+  statistics: Statistics[];
 }
 
 interface Competition {
