@@ -12,7 +12,7 @@
       <tr *ngFor="let player of competitors; index as i">
         <td>{{i+1}}</td>
         <td>{{player.athlete.displayName}}</td>
-        <td>{{player.score.displayValue}}</td>
+        <td>{{player.statistics[0].displayValue}}</td>
       </tr>
     </tbody>
   </table>

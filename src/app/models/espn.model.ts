@@ -65,6 +65,7 @@ interface Athlete {
 
 interface Statistics {
   value: number;
+  displayValue: string;
 }
 
 interface Competitor {

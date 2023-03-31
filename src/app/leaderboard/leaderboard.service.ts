@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { Event } from '../models/espn.model';
 
-const ENDPOINT: string = "http://localhost:8081/sports";
+const ENDPOINT: string = "http://localhost:8081/events";
 
 @Injectable({
   providedIn: 'root'
