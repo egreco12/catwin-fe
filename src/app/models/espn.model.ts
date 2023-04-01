@@ -68,6 +68,11 @@ interface Statistics {
   displayValue: string;
 }
 
+interface Linescore {
+  value: number;
+  displayValue: string;
+}
+
 interface Competitor {
   athlete: Athlete;
   id: string;
@@ -92,6 +97,7 @@ interface Competitor {
   abbreviation: string;
   headshort: string;
   statistics: Statistics[];
+  linescores: Linescore[];
 }
 
 interface Competition {

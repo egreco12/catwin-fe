@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng build && cp -r dist nginx-hosting && cd nginx-hosting && gcloud builds submit && gcloud app deploy --image-url us.gcr.io/isthecatwinning/angular-nginx-container && cd .."
   },
   "private": true,
   "dependencies": {

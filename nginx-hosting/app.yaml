@@ -1,6 +1,6 @@
 runtime: custom
 env: flex
-service: catwin-fe
+service: default
 threadsafe: true
 
 env_variables:

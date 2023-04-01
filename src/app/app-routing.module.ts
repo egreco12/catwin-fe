@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/leaderboard', pathMatch: 'full' },
-  { path: 'leaderboard', component: LeaderboardComponent }];
+  { path: '', component: LeaderboardComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

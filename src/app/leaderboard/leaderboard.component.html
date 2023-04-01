@@ -6,6 +6,11 @@
         <th>Rank</th>
         <th>Name</th>
         <th>Score</th>
+        <th>Thru</th>
+        <th>R1</th>
+        <th>R2</th>
+        <th>R3</th>
+        <th>R4</th>
       </tr>
     </thead>
     <tbody>
@@ -13,6 +18,11 @@
         <td>{{i+1}}</td>
         <td>{{player.athlete.displayName}}</td>
         <td>{{player.statistics[0].displayValue}}</td>
+        <td>{{player.status.thru}}</td>
+        <td *ngIf="player.linescores.length > 0">{{player.linescores[0].value}}</td>
+        <td *ngIf="player.linescores.length > 1">{{player.linescores[1].value}}</td>
+        <td *ngIf="player.linescores.length > 2">{{player.linescores[2].value}}</td>
+        <td *ngIf="player.linescores.length > 3">{{player.linescores[3].value}}</td>
       </tr>
     </tbody>
   </table>
