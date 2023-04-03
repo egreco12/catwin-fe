@@ -11,12 +11,17 @@ export class LeaderboardComponent {
   event?: Event;
   competitors?: Competitor[];
   competitorsLosingToTigerWoods?: Competitor[];
+  tigerWoodsInField?: boolean;
 
   constructor(private leaderboardService: LeaderboardService) {}
 
   ngOnInit() {
     this.getLeaderboard();
-    this.loadPlayersLosingToTigerWoods();
+    const tw = this.findTigerWoods();
+    this.tigerWoodsInField = (tw !== undefined) && (tw > -1);
+    if (this.tigerWoodsInField) {
+      this.loadPlayersLosingToTigerWoods();
+    }
   }
 
   getLeaderboard(): void {
