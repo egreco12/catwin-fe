@@ -1,29 +1,60 @@
-<div>
-  <h2>Leaderboard - {{event?.name}}</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Rank</th>
-        <th>Name</th>
-        <th>Score</th>
-        <th>Thru</th>
-        <th>R1</th>
-        <th>R2</th>
-        <th>R3</th>
-        <th>R4</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let player of competitors; index as i">
-        <td>{{i+1}}</td>
-        <td>{{player.athlete.displayName}}</td>
-        <td>{{player.statistics[0].displayValue}}</td>
-        <td>{{player.status.thru}}</td>
-        <td *ngIf="player.linescores.length > 0">{{player.linescores[0].value}}</td>
-        <td *ngIf="player.linescores.length > 1">{{player.linescores[1].value}}</td>
-        <td *ngIf="player.linescores.length > 2">{{player.linescores[2].value}}</td>
-        <td *ngIf="player.linescores.length > 3">{{player.linescores[3].value}}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="leaderboard-container">
+  <div>
+    <h2>{{event?.name}}</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Name</th>
+          <th>Score</th>
+          <th>Thru</th>
+          <th>R1</th>
+          <th>R2</th>
+          <th>R3</th>
+          <th>R4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of competitors; index as i">
+          <td>{{i+1}}</td>
+          <td>{{player.athlete.displayName}}</td>
+          <td>{{player.statistics[0].displayValue}}</td>
+          <td>{{player.status.thru}}</td>
+          <td *ngIf="player.linescores.length > 0">{{player.linescores[0].value}}</td>
+          <td *ngIf="player.linescores.length > 1">{{player.linescores[1].value}}</td>
+          <td *ngIf="player.linescores.length > 2">{{player.linescores[2].value}}</td>
+          <td *ngIf="player.linescores.length > 3">{{player.linescores[3].value}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf=findTigerWoods()>
+    <h2>Players Currently Losing to Tiger Woods - {{event?.name}}</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Name</th>
+          <th>Score</th>
+          <th>Thru</th>
+          <th>R1</th>
+          <th>R2</th>
+          <th>R3</th>
+          <th>R4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of competitorsLosingToTigerWoods; index as i">
+          <td>{{i+1}}</td>
+          <td>{{player.athlete.displayName}}</td>
+          <td>{{player.statistics[0].displayValue}}</td>
+          <td>{{player.status.thru}}</td>
+          <td *ngIf="player.linescores.length > 0">{{player.linescores[0].value}}</td>
+          <td *ngIf="player.linescores.length > 1">{{player.linescores[1].value}}</td>
+          <td *ngIf="player.linescores.length > 2">{{player.linescores[2].value}}</td>
+          <td *ngIf="player.linescores.length > 3">{{player.linescores[3].value}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

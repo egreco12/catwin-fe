@@ -1,8 +1,17 @@
 .leaderboard {
   background-color: #f4f4f4;
   border: 1px solid #ddd;
-  padding: 20px;
   font-family: Arial, sans-serif;
+  width: 50%;
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.leaderboard-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 table {
@@ -14,6 +23,7 @@ table {
 th, td {
   padding: 10px;
   text-align: left;
+  padding: 8px;
 }
 
 th {

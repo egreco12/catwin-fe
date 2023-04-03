@@ -10,11 +10,13 @@ import { LeaderboardService } from './leaderboard.service';
 export class LeaderboardComponent {
   event?: Event;
   competitors?: Competitor[];
+  competitorsLosingToTigerWoods?: Competitor[];
 
   constructor(private leaderboardService: LeaderboardService) {}
 
   ngOnInit() {
     this.getLeaderboard();
+    this.loadPlayersLosingToTigerWoods();
   }
 
   getLeaderboard(): void {
@@ -34,5 +36,18 @@ export class LeaderboardComponent {
         });
         console.log(this.competitors);
     });
+  }
+
+  findTigerWoods(): number | undefined {
+    return this.competitors?.findIndex(competitor => {
+      return competitor.displayName === "Tiger Woods";
+    });
+  }
+
+  loadPlayersLosingToTigerWoods(): void {
+    const tw = this.findTigerWoods();
+    if (tw !== undefined) {
+      this.competitorsLosingToTigerWoods = this.competitors?.slice(tw);
+    }
   }
 }
